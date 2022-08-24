@@ -46,6 +46,58 @@ namespace CsClass2
             Console.WriteLine("현재 좌표 : (" + x + ", " + y + ")");
             NextPos(x, y, vx, vy, out x, out y);
             Console.WriteLine("현재 좌표 : (" + x + ", " + y + ")");
+
+            Point point = new Point();
+            Console.WriteLine(point.x + " / " + point.y);
+            PointClass pointClassA = new PointClass(10, 20);
+            PointClass pointClassB = pointClassA;
+            pointClassB.x = 100;
+            pointClassB.y = 200;
+            Console.WriteLine(pointClassA.x + " / " + pointClassA.y);
+            Console.WriteLine(pointClassB.x + " / " + pointClassB.y);
+
+            PointStruct pointStructA = new PointStruct(10, 20);
+            PointStruct pointStructB = pointStructA;
+            pointStructB.x = 100;
+            pointStructB.y = 200;
+            Console.WriteLine(pointStructA.x + " / " + pointStructA.y);
+            Console.WriteLine(pointStructB.x + " / " + pointStructB.y);
+
+        }
+        struct Point
+        {
+            public int x;
+            public int y;
+            public string testA;
+            public string testB;
+
+            public Point(int x, int y, string test)
+            {
+                this.x = x;
+                this.y = y;
+                this.testA = test;
+                this.testB = test;
+            }
+        }
+        class PointClass
+        {
+            public int x;
+            public int y;
+            public PointClass(int x, int y)
+            {
+                this.x = x;
+                this.y = y;
+            }
+        }
+        struct PointStruct
+        {
+            public int x;
+            public int y;
+            public PointStruct(int x, int y)
+            {
+                this.x = x;
+                this.y = y;
+            }
         }
     }
 }
