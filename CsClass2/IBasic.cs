@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace CsClass2
 {
-    class IBasic
+    interface IBasic
     {
+        int TestInstanceMethod();
+        int TestProperty { get; set; }
     }
 }
